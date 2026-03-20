@@ -19,30 +19,38 @@ CREATE TABLE IF NOT EXISTS clientes (
 """)
 
 def cadastrar_clientes(Nome, Telefone, Evento, Data_evento, Valor, observacao):
-
+    conexao = sqlite3.connect("banco.db")
+    cursor = conexao.cursor()
     cursor.execute("""INSERT INTO clientes(Nome, Telefone, Evento, Data_evento, Valor, observacao)
     VALUES (?, ?, ?, ?, ?, ?)
 """, (Nome, Telefone, Evento, Data_evento, Valor, observacao))
-    
     conexao.commit()
+    conexao.close()
+
 
 def listar_clientes():
+    conexao = sqlite3.connect("banco.db")
+    cursor = conexao.cursor()
     cursor.execute("""SELECT * FROM clientes""") 
     resultado_listar_clientes = cursor.fetchall()
-    for cliente in resultado_listar_clientes:
-        print(cliente)
-
-listar_clientes()
-
+    conexao.close()
+    return resultado_listar_clientes
+    
+    
 def apagar_cliente(id):
+    conexao = sqlite3.connect("banco.db")
+    cursor = conexao.cursor()
     cursor.execute("""DELETE FROM clientes WHERE id = ?""", (id,))
-    conexao.commit() 
+    conexao.commit()
+    conexao.close() 
+
 
 def alterar_cliente(id, novo_status):
+    conexao = sqlite3.connect("banco.db")
+    cursor = conexao.cursor()
     cursor.execute("""UPDATE clientes SET Status = ? WHERE id = ?""", (novo_status, id))
-    conexao.commit() 
-alterar_cliente(1, "confirmado")
+    conexao.commit()
+    conexao.close() 
 
-conexao.close()
 print("Bannco criado com sucesso!")
 

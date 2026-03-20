@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Clientes</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Evento</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Status</th>
+        </tr>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente[0] }}</td>
+            <td>{{ cliente[1] }}</td>
+            <td>{{ cliente[2] }}</td>
+            <td>{{ cliente[3] }}</td>
+            <td>{{ cliente[4] }}</td>
+            <td>{{ cliente[5] }}</td>
+            <td>{{ cliente[6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<!--Criação dos Botões com seus respectivos nomes -->
+<form action="/cadastrar" method="POST">
+<input type="text" name="nome" placeholder="Nome do cliente" />
+<input type="text" name="Telefone" placeholder="Telefone do cliente" />
+<input type="text" name="evento" placeholder="Tipo de evento" />
+<input type="date" name="data_evento" placeholder="Data do evento" />
+<input type="number" name="Valor" placeholder="Valor do evento" />
+<input type="text" name="observacao" placeholder="Observações feitas" />
+<button type="submit">Salvar</button>
+</form> 
+</body>
+</html>

@@ -11,6 +11,7 @@
             <th>Data</th>
             <th>Valor</th>
             <th>Status</th>
+            <th>documentos</th>
         </tr>
         {% for cliente in clientes %}
         <tr>
@@ -21,6 +22,7 @@
             <td>{{ cliente[4] }}</td>
             <td>{{ cliente[5] }}</td>
             <td>{{ cliente[6] }}</td>
+            <td>{{ cliente[9] }}</td>
         </tr>
         {% endfor %}
     </table>
@@ -32,6 +34,7 @@
 <input type="date" name="data_evento" placeholder="Data do evento" />
 <input type="number" name="Valor" placeholder="Valor do evento" />
 <input type="text" name="observacao" placeholder="Observações feitas" />
+<input type="text" name="documento" placeholder="CPF OU CNPJ" />
 <button type="submit">Salvar</button>
 </form> 
 </body>

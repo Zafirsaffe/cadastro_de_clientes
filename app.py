@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for 
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from data_base import listar_clientes, cadastrar_clientes 
 import os 
 
@@ -24,6 +24,10 @@ def cadastrar():
     arquivo.save(os.path.join('uploads', nome_arquivo))
     cadastrar_clientes(nome, telefone, evento, data_evento, valor, observacao, documento, nome_arquivo)
     return redirect(url_for('index'))
+
+@app.route ('/uploads/<nome_arquivo>')
+def download_arquivo(nome_arquivo):
+    return send_from_directory('uploads', nome_arquivo)
 
 
 if __name__ == "__main__":

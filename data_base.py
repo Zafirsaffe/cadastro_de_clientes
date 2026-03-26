@@ -18,12 +18,12 @@ CREATE TABLE IF NOT EXISTS clientes (
      )                
 """)
 
-def cadastrar_clientes(Nome, Telefone, Evento, Data_evento, Valor, observacao, documento):
+def cadastrar_clientes(Nome, Telefone, Evento, Data_evento, Valor, observacao, documento, arquivo):
     conexao = sqlite3.connect("banco.db")
     cursor = conexao.cursor()
-    cursor.execute("""INSERT INTO clientes(Nome, Telefone, Evento, Data_evento, Valor, observacao, documento)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-""", (Nome, Telefone, Evento, Data_evento, Valor, observacao, documento))
+    cursor.execute("""INSERT INTO clientes(Nome, Telefone, Evento, Data_evento, Valor, observacao, documento, arquivo)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+""", (Nome, Telefone, Evento, Data_evento, Valor, observacao, documento, arquivo))
     conexao.commit()
     conexao.close()
 
@@ -55,9 +55,10 @@ def alterar_cliente(id, novo_status):
 def adicionar_coluna():
     conexao = sqlite3.connect("banco.db")
     cursor = conexao.cursor()
-    cursor.execute("""ALTER TABLE clientes ADD COLUMN documento TEXT""")
+    cursor.execute("""ALTER TABLE clientes ADD COLUMN arquivo TEXT""")
     conexao.commit()
     conexao.close() 
+
 
 
 print("Bannco criado com sucesso!")

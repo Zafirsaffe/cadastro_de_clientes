@@ -12,6 +12,7 @@
             <th>Valor</th>
             <th>Status</th>
             <th>documentos</th>
+            <th>arquivo</th>
         </tr>
         {% for cliente in clientes %}
         <tr>
@@ -23,11 +24,13 @@
             <td>{{ cliente[5] }}</td>
             <td>{{ cliente[6] }}</td>
             <td>{{ cliente[9] }}</td>
+            <td>{{ cliente[10] }}</td>
         </tr>
         {% endfor %}
     </table>
 <!--Criação dos Botões com seus respectivos nomes -->
-<form action="/cadastrar" method="POST">
+<!-- enctype: muda o formato do envio pra suportar arquivos binários. -->
+<form action="/cadastrar" method="POST" enctype="multipart/form-data">
 <input type="text" name="nome" placeholder="Nome do cliente" />
 <input type="text" name="Telefone" placeholder="Telefone do cliente" />
 <input type="text" name="evento" placeholder="Tipo de evento" />
@@ -35,6 +38,7 @@
 <input type="number" name="Valor" placeholder="Valor do evento" />
 <input type="text" name="observacao" placeholder="Observações feitas" />
 <input type="text" name="documento" placeholder="CPF OU CNPJ" />
+<input type="file" name="arquivo" accept=".pdf" />
 <button type="submit">Salvar</button>
 </form> 
 </body>

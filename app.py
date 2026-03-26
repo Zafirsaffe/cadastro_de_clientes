@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for 
 from data_base import listar_clientes, cadastrar_clientes 
+import os 
 
 app = Flask(__name__)
 
@@ -18,7 +19,10 @@ def cadastrar():
     valor = request.form['Valor']
     observacao = request.form['observacao']
     documento = request.form['documento']
-    cadastrar_clientes(nome, telefone, evento, data_evento, valor, observacao, documento)
+    arquivo = request.files['arquivo']
+    nome_arquivo = arquivo.filename
+    arquivo.save(os.path.join('uploads', nome_arquivo))
+    cadastrar_clientes(nome, telefone, evento, data_evento, valor, observacao, documento, nome_arquivo)
     return redirect(url_for('index'))
 
 

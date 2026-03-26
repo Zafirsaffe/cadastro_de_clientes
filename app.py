@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-from data_base import listar_clientes, cadastrar_clientes,  apagar_cliente 
+from data_base import listar_clientes, cadastrar_clientes,  apagar_cliente, alterar_cliente 
 import os 
 
 app = Flask(__name__)
@@ -33,6 +33,12 @@ def download_arquivo(nome_arquivo):
 def tirar_cliente(id):
     apagar_cliente(id)
     return  redirect(url_for('index'))
+
+@app.route('/atualizar/<id>', methods=['POST'])
+def atualizar_status(id):
+    novo_status = request.form['novo_status']
+    alterar_cliente(id, novo_status)
+    return redirect(url_for('index'))
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-from data_base import listar_clientes, cadastrar_clientes 
+from data_base import listar_clientes, cadastrar_clientes,  apagar_cliente 
 import os 
 
 app = Flask(__name__)
@@ -28,6 +28,11 @@ def cadastrar():
 @app.route ('/uploads/<nome_arquivo>')
 def download_arquivo(nome_arquivo):
     return send_from_directory('uploads', nome_arquivo)
+
+@app.route('/deletar/<id>', methods=['POST'])
+def tirar_cliente(id):
+    apagar_cliente(id)
+    return  redirect(url_for('index'))
 
 
 if __name__ == "__main__":

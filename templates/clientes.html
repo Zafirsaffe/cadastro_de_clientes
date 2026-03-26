@@ -13,6 +13,7 @@
             <th>Status</th>
             <th>documentos</th>
             <th>arquivo</th>
+            <th>ações</th>
         </tr>
         {% for cliente in clientes %}
         <tr>
@@ -25,6 +26,12 @@
             <td>{{ cliente[6] }}</td>
             <td>{{ cliente[9] }}</td>
             <td><a href="/uploads/{{cliente[10]}}">{{ cliente[10] }}</a></td>
+            <td>
+                <form action="/deletar/{{ cliente[0] }}" method="POST">
+                    <button type="submit">deletar</button>
+                </form>
+                
+            </td>
         </tr>
         {% endfor %}
     </table>

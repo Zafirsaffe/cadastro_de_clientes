@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Editar cliente</h1>
+    <form action="/editar/{{cliente[0]}}" method="POST">
+        <input type="text" name="nome" value="{{ cliente[1] }}" />
+        <input type="text" name="Telefone" value="{{cliente[2]}}" />
+        <input type="text" name="evento" value="{{cliente[3]}}" />
+        <input type="date" name="data_evento" value="{{cliente[4]}}" />
+        <input type="number" name="Valor" value="{{cliente[5]}}" />
+        <input type="text" name="observacao" value="{{cliente[6]}}" />
+        <input type="text" name="documento" value="{{cliente[9]}}" />
+        <p>Arquivo atual: {{ cliente[10] }}</p>
+        <input type="file" name="arquivo" accept=".pdf" />
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="/editar/{{ cliente[0] }}">
+    <button>Editar</button>
+    </a>
+</body>
+</html>

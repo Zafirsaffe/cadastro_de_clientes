@@ -59,6 +59,13 @@ def adicionar_coluna():
     conexao.commit()
     conexao.close() 
 
+def buscar_cliente(id):
+    conexao = sqlite3.connect("banco.db")
+    cursor = conexao.cursor()
+    cursor.execute("""SELECT * FROM clientes WHERE id = ?""", (id,))
+    resultado = cursor.fetchone()
+    conexao.close() 
+    return resultado
 
 
 print("Bannco criado com sucesso!")

@@ -4,6 +4,8 @@ import os
 
 app = Flask(__name__)
 
+os.makedirs('uploads', exist_ok=True)
+
 @app.route ("/clientes")
 def index():
     return render_template('clientes.html', clientes = listar_clientes())

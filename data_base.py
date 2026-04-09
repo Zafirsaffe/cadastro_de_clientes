@@ -67,6 +67,21 @@ def buscar_cliente(id):
     conexao.close() 
     return resultado
 
+def editar_cliente_completo(id, nome, telefone, evento, data_evento, valor, observacao, documento, arquivo):
+    conexao = sqlite3.connect("banco.db")
+    cursor = conexao.cursor()    
+    cursor.execute("""UPDATE clientes SET 
+        Nome = ?,
+        Telefone = ?,   
+        Evento = ?,
+        Data_evento = ?,
+        Valor = ?,
+        observacao = ?,
+        documento = ?,
+        arquivo = ?
+        WHERE id = ? """, (nome, telefone, evento, data_evento, valor, observacao, documento, arquivo, id))
+    conexao.commit()
+    conexao.close() 
 
-print("Bannco criado com sucesso!")
+print("Banco criado com sucesso!")
 

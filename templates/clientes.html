@@ -30,11 +30,14 @@
             <td>{{ cliente[9] }}</td>
             <td><a href="/uploads/{{cliente[10]}}">{{ cliente[10] }}</a></td>
             <td>
+                <a href="/editar/{{cliente[0]}}">
+                    <button>Editar</button>
+                </a>
                 <form action="/deletar/{{ cliente[0] }}" method="POST">
                     <button type="submit">deletar</button>
                 </form>
                 
-            </td>
+            </td>   
             <td>
                 <form action="/atualizar/{{cliente[0]}}" method="POST">
                     <select name="novo_status">

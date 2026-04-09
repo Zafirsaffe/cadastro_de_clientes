@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    color: #f5f2ed;
+    font-family: 'DM Sans', sans-serif;
+    padding: 2rem;
+}
+
+h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: #1f1f1f;
+    border-bottom: 1px solid #222;
+}
+
+td {
+    padding: 14px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+tr:hover td {
+    background: #1f1f1f;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: #f5f2ed;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+}
+
+button:hover {
+    border-color: #ff5c00;
+    color: #ff5c00;
+}
+
+button[type="submit"] {
+    background: #ff5c00;
+    border-color: #ff5c00;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background: #ff8c4a ;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #f5f2ed;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #ff5c00; 
+}
+
+input::placeholder {
+    color: #444;
+}
+
+form {
+    background: #1a1a1a;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 680px;
+    margin-bottom: 2rem;
+}
+
+td form {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+}
+
+a{
+    color: #ff5c00;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #ff8c4a;
+}
+
+.btn-editar {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: #f5f2ed !important;
+    transition: all 0.2s;
+    line-height: 1;
+    height: 35px;
+    vertical-align: middle;
+}
+
+td button {
+    height: 35px;
+    vertical-align: middle;
+}
+
+.btn-editar:hover {
+    border-color: #ff5c00;
+    color: #ff5c00 !important;
+}

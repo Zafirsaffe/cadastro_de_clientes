@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
 <body>
-    <h1>Clientes</h1>
+    <h1>Grupo<span style="color: #ff5c00;">Spinola</span> — Clientes</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -28,15 +32,18 @@
             <td>{{ cliente[6] }}</td>
             <td>{{ cliente[7] }}</td>
             <td>{{ cliente[9] }}</td>
-            <td><a href="/uploads/{{cliente[10]}}">{{ cliente[10] }}</a></td>
             <td>
-                <a href="/editar/{{cliente[0]}}">
-                    <button>Editar</button>
-                </a>
+                {% if cliente[10] %}
+                    <a href="/uploads/{{cliente[10]}}">{{ cliente[10] }}</a>
+                {% else %}
+                    —
+                {% endif %}
+            </td>
+            <td>
+               <a href="/editar/{{cliente[0]}}" class="btn-editar">Editar</a>
                 <form action="/deletar/{{ cliente[0] }}" method="POST">
-                    <button type="submit">deletar</button>
+                <button type="submit">deletar</button>
                 </form>
-                
             </td>   
             <td>
                 <form action="/atualizar/{{cliente[0]}}" method="POST">

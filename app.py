@@ -24,10 +24,13 @@ def cadastrar():
     observacao = request.form['observacao']
     documento = request.form['documento']
     arquivo = request.files['arquivo']
-    nome_arquivo = arquivo.filename
-    arquivo.save(os.path.join('uploads', nome_arquivo))
+    if arquivo.filename != '':
+        nome_arquivo = arquivo.filename
+        arquivo.save(os.path.join('uploads', nome_arquivo))
+    else:
+        nome_arquivo = None
     cadastrar_clientes(nome, telefone, evento, data_evento, valor, observacao, documento, nome_arquivo)
-    return redirect(url_for('index'))
+    return redirect(url_for('index'))    
 
 # Serve os arquivos PDF da pasta uploads
 @app.route ('/uploads/<nome_arquivo>')

@@ -158,3 +158,27 @@ td button {
     border-color: #ff5c00;
     color: #ff5c00 !important;
 }
+
+label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    margin-top: 1rem;
+}
+
+td select {
+    background: #2a2a2a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #f5f2ed;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    width: auto;
+    margin-bottom: 0;
+}

@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/static/style.css">
     </head>
 <body>
-    <h1>Grupo<span style="color: #ff5c00;">Spinola</span> — Clientes</h1>
+    <h1>Spinola<span style="color: #ff5c00;">Eventos</span> — Clientes</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -61,13 +61,21 @@
 <!--Criação dos Botões com seus respectivos nomes -->
 <!-- enctype: muda o formato do envio pra suportar arquivos binários. -->
 <form action="/cadastrar" method="POST" enctype="multipart/form-data">
+<label>Nome do cliente</label>
 <input type="text" name="nome" placeholder="Nome do cliente" />
+<label>Telefone do cliente</label>
 <input type="text" name="Telefone" placeholder="Telefone do cliente" />
+<label>Tipo do evento</label>
 <input type="text" name="evento" placeholder="Tipo de evento" />
+<label>Data do evento</label>
 <input type="date" name="data_evento" placeholder="Data do evento" />
+<label>Valor do evento</label>
 <input type="number" name="Valor" placeholder="Valor do evento" />
+<label>Observações feitas</label>
 <input type="text" name="observacao" placeholder="Observações feitas" />
+<label>CPF OU CNPJ</label>
 <input type="text" name="documento" placeholder="CPF OU CNPJ" />
+<label>arquivo</label>
 <input type="file" name="arquivo" accept=".pdf" />
 <button type="submit">Salvar</button>
 </form> 

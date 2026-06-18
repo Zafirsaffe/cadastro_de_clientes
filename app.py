@@ -11,6 +11,10 @@ os.makedirs('uploads', exist_ok=True)
 def index():
     return render_template('clientes.html', clientes = listar_clientes())
 
+@app.route('/')
+def home():
+    return redirect(url_for('index'))
+
 # pega os campos do formulário com request.form
 # chama cadastrar_clientes() com esses valores
 # redireciona pra /clientes depois de salva

@@ -8,12 +8,19 @@
 <body>
     <h1>Editar cliente</h1>
     <form action="/editar/{{cliente[0]}}" method="POST" enctype="multipart/form-data">
+        <label>Nome do Cliente</label>
         <input type="text" name="nome" value="{{ cliente[1] }}" />
+        <label>Telefone do Cliente</label>
         <input type="text" name="Telefone" value="{{cliente[2]}}" />
+        <label>Tipo do Evento</label>
         <input type="text" name="evento" value="{{cliente[3]}}" />
+        <label>Data do Evento</label>
         <input type="date" name="data_evento" value="{{cliente[4]}}" />
+        <label>Valor do Evento</label>
         <input type="number" name="Valor" value="{{cliente[5]}}" />
+        <label>Observações</label>
         <input type="text" name="observacao" value="{{cliente[6]}}" />
+        <label>Documentos PDF</label>
         <input type="text" name="documento" value="{{cliente[9]}}" />
         <p>Arquivo atual: {{ cliente[10] }}</p>
         <input type="file" name="arquivo" accept=".pdf" />
